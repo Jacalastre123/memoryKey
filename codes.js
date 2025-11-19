@@ -14,4 +14,15 @@ document.addEventListener("input", () => {
         codable.style.backgroundColor = "white"
         codable.style.color = "black"
     }
+
+     if (codeValue === "MassGoogleTabs*") {
+         tabsTot = 0
+         
+         numRep = codeValue.substring(14)
+        for (tabsTot < Number(numRep)) {
+            
+            tabsTot++
+            window.open("https://www.google.com", "_blank")
+        }
+    }
 })
