@@ -15,10 +15,10 @@ document.addEventListener("input", () => {
         codable.style.color = "black"
     }
     if (event.key === "Enter") {
-     if (codeValue === "MassGoogleTabs*") {
+     if (codeValue.includes("MassGoogleSwitch*")) {
          tabsTot = 0
          
-         numRep = codeValue.substring(14)
+         numRep = codeValue.substring(18)
         for (tabsTot < Number(numRep); tabsTot++;) {
             
            
