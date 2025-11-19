@@ -1,29 +1,13 @@
 highScorer.innerHTML = "High Score: " + highScore
 
-function play() {
-    score = 0
-clock = 60
-    const inter = setInterval(function() {
-        clock--
-        if (clock <= 0) {
-            dial.showModal()
-            scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord;
-            clearInterval(inter)
-            if (score >= highScore) {
-                highScore = score
-                localStorage.setItem("highScore", highScore)
-                highScorer.innerHTML = "High Score: " + highScore
-            }
-        }        timer.innerHTML = clock + "s"
-        
-    }, 1000)
-
 function generate() {
+    codable.value = ""
     scoreShow.innerHTML = "Score: " + score;
 	speed += 20
     pickerNum = Math.floor(Math.random() * 26)
     wordCycle = 0
     
+
     letterAmount++
     letterPicked = alphaList[pickerNum]
  if (letterAmount <= 1) {
@@ -46,16 +30,44 @@ function generate() {
      times = -1;
       scoreShow.innerHTML = "Score: " + score
 }
+
+function play(button) {
+    codable.value = ""
+    score = 0
+clock = 60
+currentWord = ""
+scoreShow.innerHTML = "Score: " + score;
+button.disabled = true
+    inter = setInterval(function() {
+        clock--
+        if (clock <= 0) {
+            button.disabled = false
+            dial.showModal()
+            scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord;
+            clearInterval(inter)
+            if (score >= highScore) {
+                highScore = score
+                localStorage.setItem("highScore", highScore)
+                highScorer.innerHTML = "High Score: " + highScore
+            }
+           
+        }        timer.innerHTML = clock + "s"
+        
+    }, 1000)
+
+
 generate()
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", checks)
+}
+    function checks(event) {
     scoreShow.innerHTML = "Score: " + score
     if (event.key === letterCycled) {
         times++
         score += 1
         scoreShow.innerHTML = "Score: " + score
           wordCycle++
-        console.log(score)
+    
      
     
         
@@ -83,17 +95,23 @@ document.addEventListener("keydown", (event) => {
 
    else {
      scorer.innerHTML = "Score: " + score
-    score--
+    
     clearInterval(inter)
        if (score >= highScore) {
                 highScore = score
                 localStorage.setItem("highScore", highScore)
                 highScorer.innerHTML = "High Score: " + highScore
             }
+           document.removeEventListener("keydown", checks)
             scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord
+            document.getElementById("playBut").disabled = false
     dial.showModal()
+    
    }
- 
 }
-)
+
+function resetHigh() {
+    highScore = 0
+    localStorage.setItem("highScore", highScore)
+    highScorer.innerHTML = "High Score:" + highScore
 }
