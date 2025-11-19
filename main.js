@@ -41,7 +41,7 @@ button.disabled = true
     inter = setInterval(function() {
         clock--
         if (clock <= 0) {
-            score -= 1
+            
             button.disabled = false
             dial.showModal()
             scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord;
@@ -96,7 +96,7 @@ document.addEventListener("keydown", checks)
 
    else {
      scorer.innerHTML = "Score: " + score
-    score -= 1
+
     clearInterval(inter)
        if (score >= highScore) {
                 highScore = score 
