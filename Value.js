@@ -31,6 +31,7 @@ let alphaList = [
     const dial = document.getElementById("dial")
     const timer = document.getElementById("timer")
     const scorer = document.getElementById("scorers")
+    const highScorer = document.getElementById("highScorers")
     const scoreShow = dial.querySelector("#scoreShow")
    
     let score = 0
@@ -41,7 +42,9 @@ let alphaList = [
     let letterAmount = 0
     let ans = ""
     let letterCycled;
-    let wordCycle = -1
+    let wordCycle = 0
     let times = 0
 let clock = 60
+let speed = 0
+let highScore = localStorage.getItem("highScore") || 0
   
