@@ -49,3 +49,5 @@ let speed = 0
 let highScore = localStorage.getItem("highScore") || 0
 let inter;
 let codeValue;
+let tabsTot = 0
+let numRep;
