@@ -15,16 +15,5 @@ document.addEventListener("input", () => {
         codable.style.backgroundColor = "white"
         codable.style.color = "black"
     }
-    if (event.key === "Enter") {
-     if (codeValue.includes("MassGoogleSwitch*")) {
-         tabsTot = 0
-         
-         numRep = codeValue.substring(18)
-        for (tabsTot = 0; tabsTot < Number(numRep); tabsTot++) {
-            
-           
-            window.open("https://www.google.com", "_blank")
-        }
-    }
-    }
+
 })
