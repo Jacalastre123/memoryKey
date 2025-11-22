@@ -8,7 +8,7 @@ document.addEventListener("input", () => {
         document.body.style.backgroundColor = "white";
         document.querySelectorAll("div").forEach(div => { div.style.backgroundColor = "grey"})
         
-        document.querySelectorAll("button").forEach(button => {button.style.border = "2px solid grey"}
+        document.querySelectorAll("button").forEach(button => {button.style.border = "2px solid grey"})
     }
 
     if (codeValue === "UnHide") {
