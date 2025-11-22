@@ -117,7 +117,7 @@ document.addEventListener("keydown", checks)
                 highScorer.innerHTML = "High Score: " + highScore
             }
            document.removeEventListener("keydown", checks)
-            scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord
+            scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord + "<br>High Score: " + highScore;
             document.getElementById("playBut").disabled = false
     dial.showModal()
     
