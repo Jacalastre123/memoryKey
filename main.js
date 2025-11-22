@@ -62,8 +62,8 @@ button.disabled = true
 
 generate()
 function isMobile(){
-	return /Android|iPhone|Ipad|Ipod|Windows Phone|WebOS/i
-	.test(navigator.userAgent) || window.innerWitdh <= 600
+	return /Android|iPhone|Ipad|Ipod|Windows Phone|WebOS/i.test(navigator.userAgent)
+		|| window.innerWidth <= 600
 }
 	if (isMobile()) {
 		document.addEventListener("input", checks)
