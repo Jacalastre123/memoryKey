@@ -44,12 +44,14 @@ button.disabled = true
             
             button.disabled = false
             dial.showModal()
-            scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord;
+            scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord + "<br>High Score: " + highScore;
             clearInterval(inter)
             if (score >= highScore) {
                 highScore = score
                 localStorage.setItem("highScore", highScore)
                 highScorer.innerHTML = "High Score: " + highScore
+				message.innerHTML = "New High Score!"
+				scoreShow.innerHTML = "Score: " + score + "<br>Word is: " + currentWord + "<br>High Score: " + highScore;
             }
            
         }        timer.innerHTML = clock + "s"
