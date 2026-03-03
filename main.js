@@ -1,5 +1,5 @@
 highScorer.innerHTML = "High Score: " + highScore
-
+let typers = null
 function generate() {
     codable.value = ""
     scoreShow.innerHTML = "Score: " + score;
@@ -17,8 +17,10 @@ function generate() {
     currentWord = currentWord + letterPicked
 	
    }
-   
-    setTimeout(function() {
+	if (typers) {
+   clearTimeout(typers)
+	}
+   typers = setTimeout(function() {
         shows.innerHTML = "Type it!"
 	
     }, 720 + speed)
