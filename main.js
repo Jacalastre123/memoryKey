@@ -113,6 +113,7 @@ document.addEventListener("keydown", checks)
      scorer.innerHTML = "Score: " + score
 messagers.innerHTML = "You lost"
     clearInterval(inter)
+	   shows.innerText = "abc..."
        if (score >= highScore) {
                 highScore = score 
                 localStorage.setItem("highScore", highScore)
